@@ -5,7 +5,9 @@ using Assets.Scripts;
 
 public class WorldController : MonoBehaviour {
 
-    public Object CreaturePrefab;
+    public GameObject CreaturePrefab;
+    public GameObject TreePrefab;
+
     public int CreatureCount;
     public static System.Random Rnd = new System.Random();
     List<Creature> Creatures;
@@ -21,16 +23,10 @@ public class WorldController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        foreach (Creature C in Creatures)
-        {
-            C.Move();
-        }
 	}
 
     void SpawnCreature(Vector3 Position){
 
-        GameObject T = (GameObject)Instantiate(CreaturePrefab, Position, Quaternion.identity);
-        Creatures.Add(new Creature(T));
-
+        //GameObject T = Instantiate(CreaturePrefab, Position, Quaternion.identity);
     }
 }
