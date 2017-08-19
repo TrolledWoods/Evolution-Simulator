@@ -10,9 +10,11 @@ namespace Assets.Scripts
     {
 
         GameObject Controlling;
-
+        Brain Brain;
+        
         public Creature(GameObject controlling)
         {
+            
             this.Controlling = controlling;
 
             this.Controlling.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1));
@@ -20,8 +22,9 @@ namespace Assets.Scripts
 
         public void Move()
         {
-
+            Rigidbody2D R = Controlling.GetComponent<Rigidbody2D>();
+            R.AddForceAtPosition(new Vector2(0,0.5f),new Vector2(0.1f,0));
+            R.AddForceAtPosition(new Vector2(0, -0.5f), new Vector2(-0.1f, 0));
         }
-
     }
 }
