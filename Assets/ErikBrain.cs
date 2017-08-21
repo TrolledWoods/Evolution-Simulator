@@ -15,7 +15,6 @@ namespace Assets.Scripts
         Neuron[] BrainNeurons;
         Neuron[] OutputNeurons;
         Synaps[] Synapses;
-        System.Random Rnd = WorldController.Rnd;
         ErikBrain()
         {
             InputAmount = 2;
